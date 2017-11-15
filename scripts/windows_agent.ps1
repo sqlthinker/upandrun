@@ -24,7 +24,7 @@ $msi_source    = "https://${server}:$port/packages/current/$msi_path/puppet-agen
 $msi_dest      = Join-Path ([System.IO.Path]::GetTempPath()) "puppet-agent-$arch.msi"
 $class_arch    = $msi_path -replace '-', '_'
 $pe_repo_class = "pe_repo::platform::$class_arch"
-$agent_certname = "windows.vm"
+$agent_certname = $env:COMPUTERNAME.ToLower()
 
 function CustomPuppetConfiguration {
   # Parse optional pre-installation configuration of Puppet settings via

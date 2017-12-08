@@ -1,0 +1,6 @@
+.vagrant
+*.swp
+*.exe
+*.cer
+*.msu
+*.log
